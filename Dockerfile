@@ -77,9 +77,6 @@ RUN docker-php-ext-enable mysqli \
 RUN mkdir /var/www/moodledata/ && \
     chmod 0777 /var/www/moodledata
 
-# Copies setup.sh script into moodle fodler
-COPY ./setup/setup.sh /var/www/html/moodle/
-
 # Add custom config to php
 RUN {\
     echo 'max_input_vars=5000'; \
