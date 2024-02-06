@@ -37,6 +37,12 @@ DB_PASSWORD=12345
 ```
 The variables that you can see with an assigned value should not be changed unless you intend to assign them custom parameters. You have to set `DB_DIALECT` as `mysql` or `mariadb`.
 
+If you're in Linux or MacOS, you have to grant to `setup.sh` in the folder `folder` permissions for write, read and write:
+
+```bash
+chmod 0777 ./setup/setup.sh
+```
+
 Finally, you can start the docker container as shown below:
 
 ```bash
@@ -46,6 +52,6 @@ docker compose up
 After creating the container, you have to execute a setup script called `setup.sh`. You can do it with the following command:
 
 ```bash
-docker exec -it plugin-hub-hub-1 ./setup.sh
+docker exec -it plugin-hub-hub-1 ./setup/setup.sh
 ```
 The above command installs Moodle itself, that includes grunt and grunt-cli, and all of the needed dependencies of the plugins.
